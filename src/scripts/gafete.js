@@ -73,25 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const clave = correoLink.dataset.clave;
 
     correoLink.addEventListener("click", (e) => {
-        e.preventDefault(); // Evita que abra el correo de inmediato
-        const userKey = prompt("Introduzca su RFC sin homoclave:").toUpperCase();
+        e.preventDefault();
+        const userKey = prompt("Introduzca su RFC sin homoclave:");
 
         if (userKey === clave) {
-            window.location.href = correoLink.href; // Abre el mailto
+            correoLink.removeAttribute("target"); // asegúrate que no tenga target extraño
+            correoLink.click(); // vuelve a disparar el click
         } else {
             alert("Clave incorrecta. Inténtalo de nuevo.");
         }
     });
-});
-
-correoLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    const userKey = prompt("Introduzca su RFC sin homoclave:");
-
-    if (userKey === clave) {
-        correoLink.removeAttribute("target"); // asegúrate que no tenga target extraño
-        correoLink.click(); // vuelve a disparar el click
-    } else {
-        alert("Clave incorrecta. Inténtalo de nuevo.");
-    }
 });
