@@ -83,3 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+correoLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const userKey = prompt("Introduzca su RFC sin homoclave:");
+
+    if (userKey === clave) {
+        correoLink.removeAttribute("target"); // asegúrate que no tenga target extraño
+        correoLink.click(); // vuelve a disparar el click
+    } else {
+        alert("Clave incorrecta. Inténtalo de nuevo.");
+    }
+});
