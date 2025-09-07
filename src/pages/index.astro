@@ -1,17 +1,26 @@
 ---
 import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Inicio2";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Document</title>
-	</head>
-	<body>
-		<script
-			src="https://kit.fontawesome.com/666635bc15.js"
-			crossorigin="anonymous"></script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}
+	><div class="card max-w-sm">
+		<div class="card-body">
+			<h5 class="card-title mb-0">Card title</h5>
+			<div class="text-base-content/50 mb-3">Card subtitle</div>
+			<p class="mb-4">
+				Some quick example text to build on the card title and make up
+				the bulk of the card's content.
+			</p>
+			<div class="card-actions">
+				<a href="ponentes.astro" class="link link-primary link-hover"
+					>Card link</a
+				>
+				<a href="#" class="link link-primary link-animated"
+					>Another link</a
+				>
+			</div>
+		</div>
+	</div></BaseLayout
+>
