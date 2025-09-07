@@ -18,7 +18,7 @@ const { message = frontmatter.title } = Astro.props;
             </div>
         </div>
 
-        <p class="text-slate-700 text-3xl font-bold mt-6">
+        <p class="text-slate-700 text-3xl font-bold mt-6 px-4 text-center">
             {frontmatter.grado}
             {frontmatter.nombre}
         </p>
@@ -92,7 +92,9 @@ const { message = frontmatter.title } = Astro.props;
                             <span class="sr-only">Info</span>
                             <div class="ms-3 text-sm font-medium">
                                 Si los datos aquí proporcionados no corresponden
-                                a los suyos, por favor <a
+                                a los suyos, por favor
+                                <a
+                                    id="correo-link"
                                     href={"mailto:clrhc@acatlan.unam.mx?subject=Corrección %20:%20datos%20constancia:%20" +
                                         frontmatter.nombre +
                                         "&body=Datos%20por%20verificar%20de%20la%20constancia%3A%0A-%20Nombre:%20" +
@@ -102,6 +104,7 @@ const { message = frontmatter.title } = Astro.props;
                                         "%0A-%20CURP:%20" +
                                         frontmatter.curp +
                                         "%203%0A%0AEnviado%20desde%20la%20plataforma%20de%20ayuda."}
+                                    data-clave={message}
                                     class="font-bold to-blue-900"
                                     ><u>Presione aquí para enviar un correo</u
                                     ></a

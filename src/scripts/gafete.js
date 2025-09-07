@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* Datos constancia */
+
 class AstroGreet extends HTMLElement {
     constructor() {
         super();
@@ -63,3 +65,21 @@ class AstroGreet extends HTMLElement {
 }
 
 customElements.define("astro-greet", AstroGreet);
+
+/* Enviar correo */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const correoLink = document.getElementById("correo-link");
+    const clave = correoLink.dataset.clave;
+
+    correoLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Evita que abra el correo de inmediato
+        const userKey = prompt("Introduzca su RFC sin homoclave:").toUpperCase();
+
+        if (userKey === clave) {
+            window.location.href = correoLink.href; // Abre el mailto
+        } else {
+            alert("Clave incorrecta. Inténtalo de nuevo.");
+        }
+    });
+});
