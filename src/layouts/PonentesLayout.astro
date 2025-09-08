@@ -13,14 +13,17 @@ const { message = frontmatter.title } = Astro.props;
                 class="relative inline-flex items-center justify-center w-28 h-28 overflow-hidden bg-blue-950 rounded-full shadow-lg"
             >
                 <span class="text-4xl font-bold text-white"
-                    >{frontmatter.avatar}</span
+                    >{frontmatter.nombre
+                        .split(" ")
+                        .slice(0, 2)
+                        .map((word: string) => word.slice(0, 1).toUpperCase())}</span
                 >
             </div>
         </div>
 
         <p class="text-slate-700 text-3xl font-bold mt-6 px-4 text-center">
             {frontmatter.grado}
-            {frontmatter.nombre}
+             {frontmatter.nombre.split(" ").slice(0,2).join(" ")}
         </p>
 
         <div class="grid grid-flow-col-dense items-center gap-2 mt-6 mb-12">
@@ -95,15 +98,18 @@ const { message = frontmatter.title } = Astro.props;
                                 a los suyos, por favor
                                 <a
                                     id="correo-link"
-                                    href={"mailto:clrhc@acatlan.unam.mx?subject=Corrección %20:%20datos%20constancia:%20" +
+                                    href={"mailto:clrhc@acatlan.unam.mx?subject=Corrección%20:%20datos%20constancia:%20" +
                                         frontmatter.nombre +
-                                        "&body=Datos%20por%20verificar%20de%20la%20constancia%3A%0A-%20Nombre:%20" +
+                                        "&body=Datos%20de%20referencia%20para%20verificar%20de%20la%20constancia%3A%0A%0A-%20Nombre:%20" +
                                         frontmatter.nombre +
                                         "%0A-%20Grado:%20" +
                                         frontmatter.grado +
-                                        "%0A-%20CURP:%20" +
-                                        frontmatter.curp +
-                                        "%203%0A%0AEnviado%20desde%20la%20plataforma%20de%20ayuda."}
+                                        "%0A-%20" +
+                                        frontmatter.tipo +
+                                        ":%20" +
+                                        frontmatter.participacion +
+                                        "%0A%20%0A%20Datos%20por%20cambiar:" +
+                                        "%0A%20%0A%0AEnviado%20desde%20la%20plataforma%20de%20ayuda."}
                                     data-clave={message}
                                     class="font-bold to-blue-900"
                                     ><u>Presione aquí para enviar un correo</u
@@ -143,24 +149,37 @@ const { message = frontmatter.title } = Astro.props;
                                     >Nombre completo</label
                                 >
                                 <input
+                                    disabled
                                     type="password"
                                     value={frontmatter.nombre}
                                     id="target-input2"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 />
                                 <br />
-                                <label
+                                {frontmatter.curp == "DF" ? <label
                                     for="confirm_password"
                                     class="block mb-2 text-sm font-medium text-gray-900"
                                     >CURP</label
                                 >
 
                                 <input
+                                    disabled
+                                    type="text"
+                                    value="Dato faltante / sin confirmar"
+                                    class="bg-red-100 border border-gray-300 text-red-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                /> : <label
+                                    for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                    >CURP</label
+                                >
+
+                                <input
+                                    disabled
                                     type="password"
                                     value={frontmatter.curp}
                                     id="target-input"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                />
+                                /> } 
                                 <br />
                                 <label
                                     for="confirm_password"
@@ -168,6 +187,7 @@ const { message = frontmatter.title } = Astro.props;
                                     >{frontmatter.tipo}</label
                                 >
                                 <input
+                                    disabled
                                     type="text"
                                     value={frontmatter.participacion}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"

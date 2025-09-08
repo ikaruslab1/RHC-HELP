@@ -51,9 +51,7 @@ class AstroGreet extends HTMLElement {
                 });
 
                 if (passwordInputs[0].type === "text") {
-                    alert(
-                        "Dato correcto, si quiere ocultar los datos introduzca de nuevo su RFC",
-                    );
+                    return true;
                 } else {
                     alert("Datos ocultos de nuevo.");
                 }
@@ -65,22 +63,3 @@ class AstroGreet extends HTMLElement {
 }
 
 customElements.define("astro-greet", AstroGreet);
-
-/* Enviar correo */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const correoLink = document.getElementById("correo-link");
-    const clave = correoLink.dataset.clave;
-
-    correoLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        const userKey = prompt("Introduzca su RFC sin homoclave:");
-
-        if (userKey === clave) {
-            correoLink.removeAttribute("target"); // asegúrate que no tenga target extraño
-            correoLink.click(); // vuelve a disparar el click
-        } else {
-            alert("Clave incorrecta. Inténtalo de nuevo.");
-        }
-    });
-});
