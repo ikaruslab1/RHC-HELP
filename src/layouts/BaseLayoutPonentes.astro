@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
+const { tipo } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +11,17 @@ const { pageTitle } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
-    <body class="bg-blue-100">
+    <body
+        class={tipo == "Ponente" ||
+        tipo == "Moderador" ||
+        tipo == "Conferencista magistral" ||
+        tipo == "Mesa de diálogo" ||
+        tipo == "Asistente"
+            ? "bg-blue-100"
+            : tipo == "STAFF"
+              ? "bg-red-50"
+              : "bg-amber-50"}
+    >
         <slot />
         <script
             src="https://kit.fontawesome.com/666635bc15.js"
