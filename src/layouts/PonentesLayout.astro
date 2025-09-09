@@ -1,9 +1,10 @@
 ---
 import BaseLayoutPonentes from "./BaseLayoutPonentes.astro";
 import DatosConstancias from "../components/datosConstancias.astro";
-import DatosConstanciasExtranjero from "../components/datosConstanciasExtranjero.astro";
 import HeaderGeneral from "../components/headerGeneral.astro";
+import Actividades from "../components/Actividades.astro";
 import Gafete from "../components/gafete.astro";
+import Extras from "../components/Extras.astro";
 
 const { frontmatter } = Astro.props;
 const nombreconjunto =
@@ -14,88 +15,17 @@ const nombreconjunto =
     <HeaderGeneral frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
 
     <div class="bg-white rounded-t-4xl px-4 py-12">
-        <div id="accordion-collapse-2" data-accordion="collapse">
-            <h2 id="accordion-collapse-heading-2">
-                <button
-                    type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border bg-gray-50 border-gray-200 rounded-xl hover:bg-gray-200 transition-colors duration-400"
-                    data-accordion-target="#accordion-collapse-body-2"
-                    aria-expanded="false"
-                    aria-controls="accordion-collapse-body-2"
-                >
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-book"></i>
-                        <span>Participación en el congreso</span>
-                    </div>
-                    <svg
-                        data-accordion-icon
-                        class="w-3 h-3 rotate-180 shrink-0"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5 5 1 1 5"></path>
-                    </svg>
-                </button>
-            </h2>
-            <div
-                id="accordion-collapse-body-2"
-                class="hidden"
-                aria-labelledby="accordion-collapse-heading-2"
-            >
-                <div class="p-5 border border-gray-200"><p>hola</p></div>
-            </div>
+        <!------------------------------------------------------------------ Actividades ------------------------------------------------------------------>
 
-            <h2 id="accordion-collapse-heading-3">
-                <button
-                    type="button"
-                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border bg-gray-50 border-gray-200 rounded-xl hover:bg-gray-200 transition-colors duration-400"
-                    data-accordion-target="#accordion-collapse-body-3"
-                    aria-expanded="false"
-                    aria-controls="accordion-collapse-body-3"
-                >
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-address-book"></i>
-                        <span>Talleres y Sesiones</span>
-                    </div>
-                    <svg
-                        data-accordion-icon
-                        class="w-3 h-3 rotate-180 shrink-0"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5 5 1 1 5"></path>
-                    </svg>
-                </button>
-            </h2>
-            <div
-                id="accordion-collapse-body-3"
-                class="hidden"
-                aria-labelledby="accordion-collapse-heading-3"
-            >
-                <div class="p-5 border border-gray-200"><p>hola</p></div>
-            </div>
-        </div>
-        <!------------------------------------------------------------------ Participación ------------------------------------------------------------------>
-        <br />
+        <Actividades frontmatter={frontmatter} />
+
         <!------------------------------------------------------------------ Constancia ------------------------------------------------------------------>
 
         <DatosConstancias frontmatter={frontmatter} />
 
-        <!------------------------------------------------------------------ Modal ------------------------------------------------------------------>
+        <!------------------------------------------------------------------ Herramientas extras ------------------------------------------------------------------>
+
+        <Extras frontmatter={frontmatter} />
 
         <!------------------------------------------------------------------ Modal ------------------------------------------------------------------>
 

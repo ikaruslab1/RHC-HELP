@@ -12,15 +12,11 @@ const { tipo } = Astro.props;
         <title>{pageTitle}</title>
     </head>
     <body
-        class={tipo == "Ponente" ||
-        tipo == "Moderador" ||
-        tipo == "Conferencista magistral" ||
-        tipo == "Mesa de diálogo" ||
-        tipo == "Asistente"
-            ? "bg-blue-100"
-            : tipo == "STAFF"
-              ? "bg-red-50"
-              : "bg-amber-50"}
+        class={tipo == "STAFF"
+            ? "bg-red-100"
+            : tipo == "Expositor"
+              ? "bg-amber-100"
+              : "bg-blue-100"}
     >
         <slot />
         <script

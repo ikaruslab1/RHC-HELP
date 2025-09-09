@@ -1,0 +1,509 @@
+---
+const { frontmatter } = Astro.props;
+const horarios = frontmatter.registro.find(
+    (item: any) => item.horarios,
+)?.horarios;
+---
+
+<div id="accordion-collapse-2" data-accordion="collapse">
+    <h2 id="accordion-collapse-heading-2">
+        <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border bg-gray-50 border-gray-200 rounded-xl hover:bg-gray-200 transition-colors duration-400"
+            data-accordion-target="#accordion-collapse-body-2"
+            aria-expanded="false"
+            aria-controls="accordion-collapse-body-2"
+        >
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-book"></i>
+                <span>Participación en el congreso</span>
+            </div>
+            <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"></path>
+            </svg>
+        </button>
+    </h2>
+    <div
+        id="accordion-collapse-body-2"
+        class="hidden"
+        aria-labelledby="accordion-collapse-heading-2"
+    >
+        <div class="p-5 border border-gray-200">
+            <!-- Actividad1 -->
+
+            <div class="bg-gray-100 p-2 rounde-2xl shadow-lg">
+                <div class="mb-4 border-b border-gray-200">
+                    <ul
+                        class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                        id="default-tab-50"
+                        data-tabs-toggle="#default-tab-content"
+                        role="tablist"
+                    >
+                        <li class="me-2" role="presentation">
+                            <button
+                                class="inline-block p-4 border-b-2 rounded-t-lg"
+                                id="participacion1-tab"
+                                data-tabs-target="#participacion1"
+                                type="button"
+                                role="tab"
+                                aria-controls="participacion1"
+                                aria-selected="false">Información</button
+                            >
+                        </li>
+                        <li class="me-2" role="presentation">
+                            <button
+                                class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+                                id="lugarparticipacion1-tab"
+                                data-tabs-target="#lugarparticipacion1"
+                                type="button"
+                                role="tab"
+                                aria-controls="lugarparticipacion1"
+                                aria-selected="false">Cómo llegar</button
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div id="default-tab-content">
+                    <div
+                        class="hidden p-4 rounded-lg bg-white"
+                        id="participacion1"
+                        role="tabpanel"
+                        aria-labelledby="participacion1-tab"
+                    >
+                        <p class="font-semibold text-slate-500">
+                            {frontmatter.tags[0]} de:
+                        </p>
+                        <p class="text-xl text-blue-700 font-bold">
+                            {frontmatter.tags[1]}
+                        </p>
+                        <p>
+                            Lugar: <b>{frontmatter.tags[4]}</b>
+                        </p>
+                        <p>
+                            Día:{" "}
+                            <b>
+                                {
+                                    frontmatter.tags[2] +
+                                        " " +
+                                        frontmatter.tags[3]
+                                }
+                            </b>
+                        </p>
+                    </div>
+                    <div
+                        class="hidden p-4 rounded-lg bg-white"
+                        id="lugarparticipacion1"
+                        role="tabpanel"
+                        aria-labelledby="lugarparticipacion1-tab"
+                    >
+                        <img
+                                                    class="w-full p-6"
+                                                    src={
+                                                        "/img/mapas/" +
+                                                       frontmatter.tags[4] +
+                                                        ".svg"
+                                                    }
+                                                    alt=""
+                                                />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actividad 2 -->
+
+            {
+                frontmatter.act2[0] ? (
+                     <hr class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-10" />
+                    <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                        <div class="mb-4 border-b border-gray-200">
+                            <ul
+                                class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                                id="default-tab-50"
+                                data-tabs-toggle="#default-tab-content-50"
+                                role="tablist"
+                            >
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                                        id="participacion2-tab"
+                                        data-tabs-target="#participacion2"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="participacion2"
+                                        aria-selected="true"
+                                    >
+                                        Información
+                                    </button>
+                                </li>
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+                                        id="lugarparticipacion2-tab"
+                                        data-tabs-target="#lugarparticipacion2"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="lugarparticipacion2"
+                                        aria-selected="false"
+                                    >
+                                        Cómo llegar
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="default-tab-content-50">
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="participacion2"
+                                role="tabpanel"
+                                aria-labelledby="participacion1-tab"
+                            >
+                                <p class="font-semibold text-slate-500">
+                                    {frontmatter.act2[0]} de:
+                                </p>
+                                <p class="text-xl text-blue-700 font-bold">
+                                    {frontmatter.act2[1]}
+                                </p>
+                                <p>
+                                    Lugar: <b>{frontmatter.act2[4]}</b>
+                                </p>
+                                <p>
+                                    Día:{" "}
+                                    <b>
+                                        {frontmatter.act2[2] +
+                                            " " +
+                                            frontmatter.act2[3]}
+                                    </b>
+                                </p>
+                            </div>
+
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="lugarparticipacion2"
+                                role="tabpanel"
+                                aria-labelledby="lugarparticipacion1-tab"
+                            >
+                                <img
+                                                    class="w-full p-6"
+                                                    src={
+                                                        "/img/mapas/" +
+                                                       frontmatter.act2[4] +
+                                                        ".svg"
+                                                    }
+                                                    alt=""
+                                                />
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ""
+                )
+            }
+
+            <!-- Actividad 2 -->
+
+            <!-- {frontmatter.act3[0] ? "existe" : "no existe"} -->
+        </div>
+    </div>
+
+    <h2 id="accordion-collapse-heading-3">
+        <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-600 border bg-gray-50 border-gray-200 rounded-xl hover:bg-gray-200 transition-colors duration-400"
+            data-accordion-target="#accordion-collapse-body-3"
+            aria-expanded="false"
+            aria-controls="accordion-collapse-body-3"
+        >
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Actividades registradas</span>
+            </div>
+            <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"></path>
+            </svg>
+        </button>
+    </h2>
+    <div
+        id="accordion-collapse-body-3"
+        class="hidden"
+        aria-labelledby="accordion-collapse-heading-3"
+    >
+        <div class="p-5 border border-gray-200">
+            <!--  -->
+
+            {
+                frontmatter.registro[0] == "No" ? (
+                    /* Caso en que no se registro */
+                    <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                        <div class="mb-4 border-b border-gray-20 ">
+                            <ul
+                                class="flex justify-center -mb-px text-sm font-medium text-center"
+                                id="default-tab"
+                                data-tabs-toggle="#default-tab-content"
+                                role="tablist"
+                            >
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                                        id="profile-tab"
+                                        data-tabs-target="#profile"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="profile"
+                                        aria-selected="false"
+                                    >
+                                        Sin registro
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="default-tab-content">
+                            <div
+                                class="hidden p-4 rounded-lg bg-white text-gray-500 text-center"
+                                id="profile"
+                                role="tabpanel"
+                                aria-labelledby="profile-tab"
+                            >
+                                <>
+                                    <p class="">
+                                        No se ha registrado a ninguna actividad
+                                    </p>
+                                    <br />
+                                </>
+                                <p>
+                                    Presione{" "}
+                                    <a
+                                        id="correo-link"
+                                        href={
+                                            "mailto:clrhc@acatlan.unam.mx?subject=Incripción%20a%20actividades%20TICKET%20" +
+                                            frontmatter.ID +
+                                            "&body=Quisiera%20inscribirme%20a%20alguna%20actividad%20del%20congreso."
+                                        }
+                                    >
+                                        <u>
+                                            <b>aquí</b>
+                                        </u>
+                                    </a>{" "}
+                                    para obtener información sobre las
+                                    actividades a las que se puede inscribir
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    /* Caso en que si se reistro */ horarios.map(
+                        (diaObj: any, index: any) => {
+                            const dia = Object.keys(diaObj)[0];
+                            const datos = diaObj[dia];
+
+                            // IDs únicos
+                            const tabId = `default-tab-${index}`;
+                            const contentId = `default-tab-content-${index}`;
+                            const profileId = `profile-${index}`;
+                            const dashboardId = `dashboard-${index}`;
+                            const qrimage = `qrimage-${index}`;
+
+                            return (
+                                <>
+                                    <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                                        <div class="mb-4 border-b border-gray-200">
+                                            <ul
+                                                class="flex justify-center -mb-px text-sm font-medium text-center "
+                                                id={tabId}
+                                                data-tabs-toggle={`#${contentId}`}
+                                                role="tablist"
+                                            >
+                                                <li
+                                                    class="me-3"
+                                                    role="presentation"
+                                                >
+                                                    <button
+                                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-slate-950 hover:border-gray-700"
+                                                        id={`${profileId}-tab`}
+                                                        data-tabs-target={`#${profileId}`}
+                                                        type="button"
+                                                        role="tab"
+                                                        aria-controls={
+                                                            profileId
+                                                        }
+                                                        aria-selected="false"
+                                                    >
+                                                        Información
+                                                    </button>
+                                                </li>
+                                                <li
+                                                    class="me-2"
+                                                    role="presentation"
+                                                >
+                                                    <button
+                                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-slate-950 hover:border-gray-700"
+                                                        id={`${dashboardId}-tab`}
+                                                        data-tabs-target={`#${dashboardId}`}
+                                                        type="button"
+                                                        role="tab"
+                                                        aria-controls={
+                                                            dashboardId
+                                                        }
+                                                        aria-selected="false"
+                                                    >
+                                                        Cómo llegar
+                                                    </button>
+                                                </li>
+                                                <li
+                                                    class="me-3"
+                                                    role="presentation"
+                                                >
+                                                    <button
+                                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-slate-950 hover:border-gray-700"
+                                                        id={`${qrimage}-tab`}
+                                                        data-tabs-target={`#${qrimage}`}
+                                                        type="button"
+                                                        role="tab"
+                                                        aria-controls={qrimage}
+                                                        aria-selected="false"
+                                                    >
+                                                        QR
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id={contentId}>
+                                            <div
+                                                class="hidden px-4 py-6 rounded-lg bg-white"
+                                                id={profileId}
+                                                role="tabpanel"
+                                                aria-labelledby={`${profileId}-tab`}
+                                            >
+                                                <p class="text-xl text-blue-700 font-bold">
+                                                    {datos[3]}: {datos[2]}
+                                                </p>
+                                                <p>
+                                                    Lugar: <b>{datos[1]}</b>
+                                                </p>
+                                                <p>
+                                                    Día:{" "}
+                                                    <b>
+                                                        {dia + " " + datos[0]}
+                                                    </b>
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="hidden p-4 rounded-lg bg-white"
+                                                id={dashboardId}
+                                                role="tabpanel"
+                                                aria-labelledby={`${dashboardId}-tab`}
+                                            >
+                                                <img
+                                                    class="w-full p-6"
+                                                    src={
+                                                        "/img/mapas/" +
+                                                        datos[1] +
+                                                        ".svg"
+                                                    }
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div
+                                                class="hidden p-4 rounded-lg bg-white"
+                                                id={qrimage}
+                                                role="tabpanel"
+                                                aria-labelledby={`${qrimage}-tab`}
+                                            >
+                                                <div class="flex justify-center items-center">
+                                                    <img
+                                                        class=" w-2/3 p-6"
+                                                        src={
+                                                            "/img/talleres/" +
+                                                            frontmatter.ID +
+                                                            "/" +
+                                                            index +
+                                                            ".png"
+                                                        }
+                                                        alt={
+                                                            "codigo QR para:" +
+                                                            datos[1]
+                                                        }
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-10" />
+                                </>
+                            );
+                        },
+                    )
+                )
+            }
+
+            <!--  -->
+<br>
+            <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                        <div class="mb-4 border-b border-gray-20 ">
+                            <ul
+                                class="flex justify-center -mb-px text-sm font-medium text-center"
+                                id="default-tab"
+                                data-tabs-toggle="#default-tab-content-101"
+                                role="tablist"
+                            >
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                                        id="pcampo-tab"
+                                        data-tabs-target="#pcampo"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="pcampo"
+                                        aria-selected="false"
+                                    >
+                                        Visita de campo
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="default-tab-content-101">
+                            <div
+                                class="hidden p-4 rounded-lg bg-white text-gray-500 text-center"
+                                id="pcampo"
+                                role="tabpanel"
+                                aria-labelledby="pcampo-tab"
+                            >
+                                <>
+                                    <p class="">
+                                        Usted no se ha registrado en la vista de campo, puede ver la <a href="https://drive.google.com/file/d/1siDPtj1BdKnXo8zrbT43xqyMnMHLQnbn/view?usp=sharing" target="_blank"><u><b>Convocatoria aquí</b></u></a>
+                                    </p>
+                                    <br />
+                                </>
+                                <div><button type="button" class="px-6 py-3.5 text-base font-medium text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:slate-blue-300 rounded-lg text-center"><a href="https://docs.google.com/forms/d/e/1FAIpQLScuPus0yxYuxFL2JZxdxR_Z0Yj4wZcoXJXeEOOUUWcjtq-Kdw/viewform" target="_blank">Registrarse</a></button></div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+<br />

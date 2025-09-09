@@ -18,7 +18,7 @@ act2:
     - Defender el agua, construir el futuro Miradas desde la ciencia, la gestión y la comunidad
     - Jueves
     - 17:30-18:50 hrs
-    - Sala Principal
+    - Lugar grande
 act3: 
     - 
 act4: 
@@ -28,7 +28,20 @@ act5:
 registro:
     - No
     - horarios:
-        -
-pcampo:
-    - No
+        - Lunes:  
+            - 12:20 - 14:20 hrs
+            - Sala TABASCO
+            - Sesión 1 Tratamiento de aguas residuales
+            - Taller
+        - Martes:
+            - 11:40 - 13:40 hrs
+            - Sala TABASCO
+            - Sesión 2 Tratamiento de aguas residuales
+            - Taller
+        - Miércoles:
+            - 11:40 - 13:40 hrs
+            - Sala TABASCO
+            -
+            - Mesa
+            
 ---

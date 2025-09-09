@@ -28,6 +28,8 @@ class AstroGreet extends HTMLElement {
         const passwordInputs = [
             document.getElementById("target-input"),
             document.getElementById("target-input2"),
+            document.getElementById("target-input3"),
+            document.getElementById("target-input4"),
         ];
 
         // Lee la clave del atributo data-clave.

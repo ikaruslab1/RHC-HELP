@@ -7,7 +7,7 @@ const { frontmatter, nombreconjunto } = Astro.props;
     <button
         data-modal-target="default-modal"
         data-modal-toggle="default-modal"
-        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        class="block text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         type="button"
     >
         Gafete virtual
@@ -80,12 +80,18 @@ const { frontmatter, nombreconjunto } = Astro.props;
                                             class="flex items-center justify-center"
                                         >
                                             <img
-                                                src="/img/001.png"
+                                                src={`/img/ponentes/${frontmatter.ID}.png`}
                                                 alt=""
                                                 class="absolute w-2/3 pt-10"
                                             />
                                             <img
-                                                src="/img/ponentes.webp"
+                                                src={frontmatter.tags[0] ==
+                                                "STAFF"
+                                                    ? "/img/staff.webp"
+                                                    : frontmatter.tags[0] ==
+                                                        "Expositor"
+                                                      ? "/img/expositor.webp"
+                                                      : "/img/ponentes.webp"}
                                                 alt=""
                                                 class="w-full h-64 object-cover"
                                             />
@@ -96,13 +102,28 @@ const { frontmatter, nombreconjunto } = Astro.props;
                                             >
                                                 {nombreconjunto}
                                             </h1>
-                                            <p style="color: #1e6dff;">
+                                            <p
+                                                style={frontmatter.tags[0] ==
+                                                "STAFF"
+                                                    ? "color: #ff3f1f;"
+                                                    : frontmatter.tags[0] ==
+                                                        "Expositor"
+                                                      ? "color: #aa8d4d;"
+                                                      : "color: #1e6dff;"}
+                                            >
                                                 {frontmatter.tags[0]}
                                             </p>
                                             <p
                                                 class="rotate-90 absolute bottom-12 -right-2 -translate-y-1.5 translate-x-3.5 text-sm text-gray-300"
                                             >
-                                                FES - <b style="color: #1e6dff;"
+                                                FES - <b
+                                                    style={frontmatter
+                                                        .tags[0] == "STAFF"
+                                                        ? "color: #ff3f1f;"
+                                                        : frontmatter.tags[0] ==
+                                                            "Expositor"
+                                                          ? "color: #aa8d4d;"
+                                                          : "color: #1e6dff;"}
                                                     >ACATLÁN</b
                                                 >
                                             </p>
@@ -113,7 +134,11 @@ const { frontmatter, nombreconjunto } = Astro.props;
 
                             <div
                                 class="absolute flex justify-center inset-0 w-full h-full rounded-lg shadow-2xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]"
-                                style="background-color: #1e6dff;"
+                                style={frontmatter.tags[0] == "STAFF"
+                                    ? "background-color: #ff3f1f;"
+                                    : frontmatter.tags[0] == "Expositor"
+                                      ? "background-color: #aa8d4d;"
+                                      : "background-color: #1e6dff;"}
                             >
                                 <div
                                     class="absolute rounded-full bg-white w-10 h-4 inset-shadow-sm inset-shadow-gray-400"
@@ -128,7 +153,7 @@ const { frontmatter, nombreconjunto } = Astro.props;
                         </div>
                     </div>
                     <p
-                        class="absolute bottom-0 right-0 px-4 py-2 text-blue-700"
+                        class="absolute bottom-0 right-0 px-4 py-2 text-gray-700 font-semibold"
                     >
                         ID: {frontmatter.ID}
                     </p>
