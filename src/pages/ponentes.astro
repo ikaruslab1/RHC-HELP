@@ -3,17 +3,91 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const allPonentes = await Astro.glob("./ponentes/*.md");
-const pageTitle = "Ponentes2";
+const pageTitle = "Ponentes";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <ul>
-        {
-            allPonentes.map((ponente) => (
-                <li>
-                    <a href={ponente.url}>{ponente.frontmatter.nombre}</a>
-                </li>
-            ))
-        }
-    </ul>
+    <table id="search-table">
+        <thead>
+            <tr>
+                <th>
+                    <span class="flex items-center"> ID </span>
+                </th>
+                <th>
+                    <span class="flex items-center"> Apellido </span>
+                </th>
+                <th>
+                    <span class="flex items-center"> Tipo </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                allPonentes.map((ponente) => (
+                    <tr>
+                        <td class="font-bold">
+                            <a href={ponente.url}>{ponente.frontmatter.ID}</a>
+                        </td>
+                        <td>{ponente.frontmatter.nombre.split(" ").at(-2)}</td>
+                        <td>
+                            <p
+                                class={
+                                    ponente.frontmatter.tags[0] == "STAFF"
+                                        ? "text-center text-slate-800 bg-red-100 py-2 px-1 rounded-full"
+                                        : ponente.frontmatter.tags[0] ==
+                                            "Expositor"
+                                          ? "text-center text-slate-800 bg-amber-100 py-2 px-1 rounded-full"
+                                          : "text-center text-slate-800 bg-blue-100 py-2 px-1 rounded-full"
+                                }
+                            >
+                                {ponente.frontmatter.tags[0]}{" "}
+                            </p>
+                            {ponente.frontmatter.act2[0] ? (
+                                <br>
+                                <p
+                                    class={
+                                        ponente.frontmatter.act2[0] == "STAFF"
+                                            ? "text-center text-slate-800 bg-red-100 py-2 px-1 rounded-full"
+                                            : ponente.frontmatter.act2[0] ==
+                                                "Expositor"
+                                              ? "text-center text-slate-800 bg-amber-100 py-2 px-1 rounded-full"
+                                              : "text-center text-slate-800 bg-blue-100 py-2 px-1 rounded-full"
+                                    }
+                                >
+                                    {ponente.frontmatter.act2[0]}
+                                </p>
+                            ) : (
+                                ""
+                            )}
+
+                            {ponente.frontmatter.act3[0] ? (
+                                <br>
+                                <p
+                                    class={
+                                        ponente.frontmatter.act3[0] == "STAFF"
+                                            ? "text-center text-slate-800 bg-red-100 py-2 px-1 rounded-full"
+                                            : ponente.frontmatter.act3[0] ==
+                                                "Expositor"
+                                              ? "text-center text-slate-800 bg-amber-100 py-2 px-1 rounded-full"
+                                              : "text-center text-slate-800 bg-blue-100 py-2 px-1 rounded-full"
+                                    }
+                                >
+                                    {ponente.frontmatter.act3[0]}
+                                </p>
+                            ) : (
+                                ""
+                            )}
+
+                        </td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+
+    <script>
+        import "../scripts/buscar.js";
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
 </BaseLayout>

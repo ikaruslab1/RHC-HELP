@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/PonentesLayout.astro
 title: BEAR790325
-ID: RM01
+ID: EJ00
 curp: BEAR790325MJCLLS04
-nombre: Raul Morales Escalante
+nombre: Archivo de Ejemplo MD
 grado: Mtro.
 datosextranjero:
     - 
@@ -14,7 +14,7 @@ tags:
     - 16:30-16:50 hrs
     - Sala GUANAJUATO
 act2: 
-    - Conferencista magistral
+    - STAFF
     - Defender el agua, construir el futuro Miradas desde la ciencia, la gestión y la comunidad
     - Jueves
     - 17:30-18:50 hrs
