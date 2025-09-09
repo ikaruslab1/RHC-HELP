@@ -1,4 +1,6 @@
 ---
+import TallerMesaMensaje from './mensajes/TallerMesaMensaje.astro'
+
 const { frontmatter } = Astro.props;
 const horarios = frontmatter.registro.find(
     (item: any) => item.horarios,
@@ -41,6 +43,9 @@ const horarios = frontmatter.registro.find(
         aria-labelledby="accordion-collapse-heading-2"
     >
         <div class="p-5 border border-gray-200">
+
+            
+
             <!-- Actividad1 -->
 
             <div class="bg-gray-100 p-2 rounde-2xl shadow-lg">
@@ -70,8 +75,7 @@ const horarios = frontmatter.registro.find(
                                 type="button"
                                 role="tab"
                                 aria-controls="lugarparticipacion1"
-                                aria-selected="false">Cómo llegar</button
-                            >
+                                aria-selected="false">Cómo llegar</button>
                         </li>}
                     </ul>
                 </div>
@@ -108,7 +112,7 @@ const horarios = frontmatter.registro.find(
                         role="tabpanel"
                         aria-labelledby="lugarparticipacion1-tab"
                     >
-                        <img
+                        {frontmatter.tags[0] == "Asistente" ? "" : <img
                                                     class="w-full p-6"
                                                     src={
                                                         "/img/mapas/" +
@@ -116,7 +120,7 @@ const horarios = frontmatter.registro.find(
                                                         ".svg"
                                                     }
                                                     alt=""
-                                                />
+                                                />}
                     </div>
                 </div>
             </div>
@@ -253,6 +257,9 @@ const horarios = frontmatter.registro.find(
         aria-labelledby="accordion-collapse-heading-3"
     >
         <div class="p-5 border border-gray-200">
+
+            <TallerMesaMensaje></TallerMesaMensaje>
+
             <!--  -->
 
             {
@@ -436,7 +443,7 @@ const horarios = frontmatter.registro.find(
                                             >
                                                 <div class="flex justify-center items-center">
                                                     <img
-                                                        class=" w-2/3 p-6"
+                                                        class="p-6"
                                                         src={
                                                             "/img/talleres/" +
                                                             frontmatter.ID +
