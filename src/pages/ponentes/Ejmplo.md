@@ -38,6 +38,12 @@ registro:
             - Sala TABASCO
             - Sesión 2 Tratamiento de aguas residuales
             - Taller
+        - Martes:
+            - 11:40 - 13:40 hrs
+            - Sala TABASCO
+            - Sesión 2 Tratamiento de aguas residuales
+            - Taller
+            
         - Miércoles:
             - 11:40 - 13:40 hrs
             - Sala TABASCO

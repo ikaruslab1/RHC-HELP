@@ -162,7 +162,7 @@ const { message = frontmatter.title } = Astro.props;
                                 <input
                                     disabled
                                     type="text"
-                                    value={frontmatter.grado == "Mtro." || "Mtra." ? "Maestría" : frontmatter.grado == "Dr." || "Dra." ? "Doctorado" : "Grado no registrado"}
+                                    value={frontmatter.grado === "Mtro." || frontmatter.grado === "Mtra." ? "Maestría" : frontmatter.grado === "Dr." || frontmatter.grado === "Dra." ? "Doctorado" :  frontmatter.grado === "Lic." || frontmatter.grado === "Ing." ? "Licenciatura" : "Grado no registrado"}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 />
 
@@ -176,7 +176,7 @@ const { message = frontmatter.title } = Astro.props;
                                 <input
                                     disabled
                                     type="text"
-                                    value={frontmatter.tags[1]}
+                                    value={frontmatter.tags[0] == "Asistente" ? frontmatter.tags[0] : frontmatter.tags[1]}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
                                 {frontmatter.act2[0] ? <br>
                                 <label
