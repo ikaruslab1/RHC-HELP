@@ -67,7 +67,7 @@ const horarios = frontmatter.registro.find(
                                 aria-selected="false">Información</button
                             >
                         </li>
-                        {frontmatter.tags[0] == "Asistente" ? "" : <li class="me-2" role="presentation">
+                        {frontmatter.tags[0] == "Asistente" || frontmatter.tags[0] == "STAFF" ? "" : <li class="me-2" role="presentation">
                             <button
                                 class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
                                 id="lugarparticipacion1-tab"
@@ -86,7 +86,7 @@ const horarios = frontmatter.registro.find(
                         role="tabpanel"
                         aria-labelledby="participacion1-tab"
                     >
-                        {frontmatter.tags[0] == "Asistente" ? <p class="text-center text-slate-400">Usted es un asistente</p> : <p class="font-semibold text-slate-500">
+                        {frontmatter.tags[0] == "Asistente" ? <p class="text-center text-slate-400">Usted es un asistente</p> : frontmatter.tags[0] == "STAFF" ? <p class="text-center text-slate-400">Usted es STAFF</p> : <p class="font-semibold text-slate-500">
                             {frontmatter.tags[0]} de:
                         </p>
                         <p class="text-xl text-blue-700 font-bold">
@@ -112,7 +112,7 @@ const horarios = frontmatter.registro.find(
                         role="tabpanel"
                         aria-labelledby="lugarparticipacion1-tab"
                     >
-                        {frontmatter.tags[0] == "Asistente" ? "" : <img
+                        {frontmatter.tags[0] == "Asistente" || frontmatter.tags[0] == "STAFF" ? "" : <img
                                                     class="w-full p-6"
                                                     src={
                                                         "/img/mapas/" +

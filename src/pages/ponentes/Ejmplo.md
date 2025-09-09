@@ -1,24 +1,17 @@
 ---
 layout: ../../layouts/PonentesLayout.astro
-title: BEAR790325
+title: EJ00
 ID: EJ00
 curp: BEAR790325MJCLLS04
+estatus: Cuatro
 nombre: Archivo de Ejemplo MD
-grado: Mtro.
+grado: SS.
 datosextranjero:
     - 
 tags:
-    - Ponente
-    - Alternativas para solucionar la falta de abastecimiento de agua en México
-    - Miércoles
-    - 16:30-16:50 hrs
-    - Sala GUANAJUATO
-act2: 
     - STAFF
-    - Defender el agua, construir el futuro Miradas desde la ciencia, la gestión y la comunidad
-    - Jueves
-    - 17:30-18:50 hrs
-    - Lugar grande
+act2: 
+    - 
 act3: 
     - 
 act4: 
