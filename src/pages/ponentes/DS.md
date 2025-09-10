@@ -1,18 +1,18 @@
 ---
 layout: ../../layouts/PonentesLayout.astro
-title: GOGC760318
-ID: CG01
-curp: GOGC760318HDFNRS17
-estatus: Dos
-nombre: César González Guerrero
-grado: Mtro.
+title: SAOD590303
+ID: DS01
+curp: 
+estatus: Uno
+nombre: Demetrio Marcos Santamaría Orozco
+grado: Dr.
 datosextranjero:
     - 
 tags:
     - Ponente
-    - Revisión de la calidad del agua en la Cuenca del Pánuco
-    - Miércoles
-    - 16:00-16:20 hrs
+    - La industria petrolera de la Cuenca Tampico – Misantla Impacto en la Cuenca del Río Pánuco
+    - Jueves
+    - 12:40-13:00 hrs
     - Sala BC SUR-AGUASCALIENTES
 act2: 
     - 

@@ -95,7 +95,7 @@ const { message = frontmatter.title } = Astro.props;
                                 <input
                                     disabled
                                     type="text"
-                                    value="Dato faltante / sin confirmar"
+                                    value="Favor de dar este dato vía correo electrónico a clrhc@acatlan.unam.mx antes del 16 de octubre para la emisión de su constancia a tiempo."
                                     class="bg-red-100 border border-gray-300 text-red-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 /> } 
                                 <br />
@@ -119,7 +119,7 @@ const { message = frontmatter.title } = Astro.props;
                                 <br>
                                 <label
                                     for="confirm_password"
-                                    class="block mb-2 text-sm font-medium text-gray-900">{frontmatter.tags[0] == "Ponente" ? "Ponencia" : frontmatter.tags[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.tags[0] == "Tallerista" ? "Taller" : "Tipo"}</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900">{frontmatter.tags[0] == "Ponente" ? "Ponencia" : frontmatter.tags[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.tags[0] == "Tallerista" ? "Taller" : frontmatter.tags[0] == "Ponente de la mesa de diálogo" ? "Mesa de diálogo" : "Tipo"}</label>
                                 
                                 <input
                                     disabled
@@ -130,7 +130,7 @@ const { message = frontmatter.title } = Astro.props;
                                 <label
                                     for="confirm_password"
                                     class="block mb-2 text-sm font-medium text-gray-900"
-                                    >{frontmatter.act2[0] == "Ponente" ? "Ponencia" : frontmatter.act2[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.act2[0] == "Tallerista" ? "Taller" : "Tipo"}</label>
+                                    >{frontmatter.act2[0] == "Ponente" ? "Ponencia" : frontmatter.act2[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.act2[0] == "Tallerista" ? "Taller" : frontmatter.act2[0] == "Ponente de la mesa de diálogo" ? "Mesa de diálogo" : "Tipo"}</label>
                                 
                                 <input
                                     disabled
