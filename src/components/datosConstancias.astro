@@ -77,7 +77,35 @@ const { message = frontmatter.title } = Astro.props;
                                     value={frontmatter.datosextranjero[0]}
                                     id="target-input"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                /> : frontmatter.curp ? <label
+                                />
+                                <br> 
+                                <label
+                                    for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                    >Sexo</label>
+
+                                <input
+                                    disabled
+                                    type="password"
+                                    value={frontmatter.datosextranjero[1]}
+                                    id="target-input3"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                />
+                                <br>
+                                <label
+                                    for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                    >Fecha de nacimiento</label>
+
+                                <input
+                                    disabled
+                                    type="password"
+                                    value={frontmatter.datosextranjero[2]}
+                                    id="target-input4"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                />
+                                
+                                : frontmatter.curp ? <label
                                     for="confirm_password"
                                     class="block mb-2 text-sm font-medium text-gray-900"
                                     >CURP</label>
