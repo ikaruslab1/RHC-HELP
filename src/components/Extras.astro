@@ -1,4 +1,7 @@
 ---
+import Ponencias from "./botones/Ponencias.astro";
+import Hoteles from "./botones/Hoteles.astro";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -40,7 +43,12 @@ const { frontmatter } = Astro.props;
         aria-labelledby="accordion-collapse-heading-4"
     >
         <div class="p-5 border border-gray-200">
-            <p class="text-center text-slate-400">Construyendo</p>
+            <p class="text-center text-slate-400">
+                <div class="flex justify-around">
+                    <Ponencias />
+                    <Hoteles />
+                </div>
+            </p>
         </div>
     </div>
 </div>
