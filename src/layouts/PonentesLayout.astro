@@ -5,7 +5,6 @@ import HeaderGeneral from "../components/headerGeneral.astro";
 import Actividades from "../components/Actividades.astro";
 import Gafete from "../components/gafete.astro";
 import Extras from "../components/Extras.astro";
-import Anuncio from "../components/botones/anuncio.astro";
 
 const { frontmatter } = Astro.props;
 const nombreconjunto =
@@ -16,7 +15,6 @@ const nombreconjunto =
     <HeaderGeneral frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
 
     <div class="bg-white rounded-t-4xl px-4 py-12">
-        <Anuncio />
         <!------------------------------------------------------------------ Actividades ------------------------------------------------------------------>
 
         <Actividades frontmatter={frontmatter} />
