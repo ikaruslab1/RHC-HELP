@@ -5,6 +5,7 @@ import HeaderGeneral from "../components/headerGeneral.astro";
 import Actividades from "../components/Actividades.astro";
 import Gafete from "../components/gafete.astro";
 import Extras from "../components/Extras.astro";
+import QRCodeGenerator from "../components/QRCodeGenerator.astro";
 
 const { frontmatter } = Astro.props;
 const nombreconjunto =
@@ -27,7 +28,10 @@ const nombreconjunto =
 
         <Extras frontmatter={frontmatter} />
 
-        <!------------------------------------------------------------------ Modal ------------------------------------------------------------------>
+        <!------------------------------------------------------------------ Modal 
+        ------------------------------------------------------------------>
+
+        <QRCodeGenerator frontmatter={frontmatter} />
 
         <Gafete frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
     </div>
