@@ -218,6 +218,192 @@ const horarios = frontmatter.registro.find(
 
             <!-- Actividad 2 -->
 
+            <!-- Actividad 3 -->
+
+            {
+                frontmatter.act3[0] ? (
+                     <hr class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-10" />
+                    <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                        <div class="mb-4 border-b border-gray-200">
+                            <ul
+                                class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                                id="default-tab-50"
+                                data-tabs-toggle="#default-tab-content-50"
+                                role="tablist"
+                            >
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                                        id="participacion3-tab"
+                                        data-tabs-target="#participacion3"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="participacion3"
+                                        aria-selected="true"
+                                    >
+                                        Información
+                                    </button>
+                                </li>
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+                                        id="lugarparticipacion3-tab"
+                                        data-tabs-target="#lugarparticipacion3"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="lugarparticipacion3"
+                                        aria-selected="false"
+                                    >
+                                        Cómo llegar
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="default-tab-content-50">
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="participacion3"
+                                role="tabpanel"
+                                aria-labelledby="participacion1-tab"
+                            >
+                                <p class="font-semibold text-slate-500">
+                                    {frontmatter.act3[0]} de:
+                                </p>
+                                <p class="text-xl text-blue-700 font-bold">
+                                    {frontmatter.act3[1]}
+                                </p>
+                                <p>
+                                    Lugar: <b>{frontmatter.act3[4]}</b>
+                                </p>
+                                <p>
+                                    Día:{" "}
+                                    <b>
+                                        {frontmatter.act3[2] +
+                                            " " +
+                                            frontmatter.act3[3]}
+                                    </b>
+                                </p>
+                            </div>
+
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="lugarparticipacion3"
+                                role="tabpanel"
+                                aria-labelledby="lugarparticipacion1-tab"
+                            >
+                                <img
+                                                    class="w-full p-6"
+                                                    src={
+                                                        "/img/mapas/" +
+                                                       frontmatter.act3[4] +
+                                                        ".svg"
+                                                    }
+                                                    alt=""
+                                                />
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ""
+                )
+            }
+
+            <!-- Actividad 3 -->
+
+            <!-- Actividad 4 -->
+
+            {
+                frontmatter.act4[0] ? (
+                     <hr class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-10" />
+                    <div class="bg-gray-100 p-2 rounded-2xl shadow-lg">
+                        <div class="mb-4 border-b border-gray-200">
+                            <ul
+                                class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                                id="default-tab-50"
+                                data-tabs-toggle="#default-tab-content-50"
+                                role="tablist"
+                            >
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                                        id="participacion4-tab"
+                                        data-tabs-target="#participacion4"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="participacion4"
+                                        aria-selected="true"
+                                    >
+                                        Información
+                                    </button>
+                                </li>
+                                <li class="me-2" role="presentation">
+                                    <button
+                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+                                        id="lugarparticipacion4-tab"
+                                        data-tabs-target="#lugarparticipacion4"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="lugarparticipacion4"
+                                        aria-selected="false"
+                                    >
+                                        Cómo llegar
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="default-tab-content-50">
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="participacion4"
+                                role="tabpanel"
+                                aria-labelledby="participacion1-tab"
+                            >
+                                <p class="font-semibold text-slate-500">
+                                    {frontmatter.act4[0]} de:
+                                </p>
+                                <p class="text-xl text-blue-700 font-bold">
+                                    {frontmatter.act4[1]}
+                                </p>
+                                <p>
+                                    Lugar: <b>{frontmatter.act4[4]}</b>
+                                </p>
+                                <p>
+                                    Día:{" "}
+                                    <b>
+                                        {frontmatter.act4[2] +
+                                            " " +
+                                            frontmatter.act4[3]}
+                                    </b>
+                                </p>
+                            </div>
+
+                            <div
+                                class="hidden p-4 rounded-lg bg-white"
+                                id="lugarparticipacion4"
+                                role="tabpanel"
+                                aria-labelledby="lugarparticipacion1-tab"
+                            >
+                                <img
+                                                    class="w-full p-6"
+                                                    src={
+                                                        "/img/mapas/" +
+                                                       frontmatter.act4[4] +
+                                                        ".svg"
+                                                    }
+                                                    alt=""
+                                                />
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ""
+                )
+            }
+
+            <!-- Actividad 4 -->
+
             <!-- {frontmatter.act3[0] ? "existe" : "no existe"} -->
         </div>
     </div>

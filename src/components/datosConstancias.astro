@@ -139,8 +139,7 @@ const { message = frontmatter.title } = Astro.props;
                                     disabled
                                     type="text"
                                     value={frontmatter.grado === "Mtro." || frontmatter.grado === "Mtra." ? "Maestría" : frontmatter.grado === "Dr." || frontmatter.grado === "Dra." ? "Doctorado" :  frontmatter.grado === "Lic." || frontmatter.grado === "Ing." ? "Licenciatura" : frontmatter.grado == "SS." ? "Estudiante Universitario" : frontmatter.grado === "Esp." ? "Especialidad" : "Grado no registrado"}
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                />
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
 
                                 <!-- Participaciones -->
 
@@ -155,6 +154,7 @@ const { message = frontmatter.title } = Astro.props;
                                     value={frontmatter.tags[0] == "Asistente" ? frontmatter.tags[0] : frontmatter.grado == "SS." ? "Servicio social" : frontmatter.tags[1]}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
                                 {frontmatter.act2[0] ? <br>
+
                                 <label
                                     for="confirm_password"
                                     class="block mb-2 text-sm font-medium text-gray-900"
@@ -164,6 +164,34 @@ const { message = frontmatter.title } = Astro.props;
                                     disabled
                                     type="text"
                                     value={frontmatter.act2[0] == "Asistente a taller" ? frontmatter.act2[0] : frontmatter.act2[1]}
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                /> : ""}
+
+                                {frontmatter.act3[0] ? <br>
+                                
+                                <label
+                                    for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                    >{frontmatter.act3[0] == "Ponente" ? "Ponencia" : frontmatter.act3[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.act3[0] == "Tallerista" ? "Taller" : frontmatter.act3[0] == "Ponente de la mesa de diálogo" ? "Mesa de diálogo" : "Tipo"}</label>
+                                
+                                <input
+                                    disabled
+                                    type="text"
+                                    value={frontmatter.act3[0] == "Asistente a taller" ? frontmatter.act3[0] : frontmatter.act3[1]}
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                /> : ""}
+
+                                {frontmatter.act4[0] ? <br>
+                                
+                                <label
+                                    for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900"
+                                    >{frontmatter.act4[0] == "Ponente" ? "Ponencia" : frontmatter.act4[0] == "Conferencista magistral" ? "Conferencia magistral" : frontmatter.act4[0] == "Tallerista" ? "Taller" : frontmatter.act4[0] == "Ponente de la mesa de diálogo" ? "Mesa de diálogo" : "Tipo"}</label>
+                                
+                                <input
+                                    disabled
+                                    type="text"
+                                    value={frontmatter.act4[0] == "Asistente a taller" ? frontmatter.act4[0] : frontmatter.act4[1]}
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 /> : ""}
 
