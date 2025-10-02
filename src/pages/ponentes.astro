@@ -9,7 +9,7 @@ const pageTitle = "Ponentes";
 <BaseLayout pageTitle={pageTitle}>
     <table id="search-table">
         <thead>
-            <tr>
+            <tr>   
                 <th>
                     <span class="flex items-center"> ID </span>
                 </th>
@@ -19,12 +19,16 @@ const pageTitle = "Ponentes";
                 <th>
                     <span class="flex items-center"> Tipo </span>
                 </th>
+                <th class="hidden">
+                    <span class="items-center"> Dato </span>
+                </th>
             </tr>
         </thead>
         <tbody>
             {
                 allPonentes.map((ponente) => (
                     <tr>
+                        
                         <td class="font-bold">
                             <a href={ponente.url}>{ponente.frontmatter.ID}</a>
                         </td>
@@ -78,6 +82,9 @@ const pageTitle = "Ponentes";
                                 ""
                             )}
 
+                        </td>
+                        <td class="hidden">
+                            <a href={ponente.url}>{ponente.frontmatter.curp}</a>
                         </td>
                     </tr>
                 ))
