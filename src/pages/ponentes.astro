@@ -7,7 +7,7 @@ const pageTitle = "Ponentes";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <table id="search-table">
+    <table id="search-table" data-table="label">
         <thead>
             <tr>   
                 <th>
@@ -22,13 +22,15 @@ const pageTitle = "Ponentes";
                 <th class="hidden">
                     <span class="items-center"> Dato </span>
                 </th>
+                 <th class="hidden">
+                    <span class="items-center"> Dato2 </span>
+                </th>
             </tr>
         </thead>
         <tbody>
             {
                 allPonentes.map((ponente) => (
                     <tr>
-                        
                         <td class="font-bold">
                             <a href={ponente.url}>{ponente.frontmatter.ID}</a>
                         </td>
@@ -86,11 +88,16 @@ const pageTitle = "Ponentes";
                         <td class="hidden">
                             <a href={ponente.url}>{ponente.frontmatter.curp}</a>
                         </td>
+                        <td class="hidden">
+                            <a href={ponente.url}>{ponente.frontmatter.nombre}</a>
+                        </td>
                     </tr>
                 ))
             }
         </tbody>
     </table>
+
+    
 
     <script>
         import "../scripts/buscar.js";
