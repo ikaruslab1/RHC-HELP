@@ -1,0 +1,45 @@
+[33m43417566[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m add: 4 asistentes
+[33m80e63d30[m add: all asistentes
+[33mb45ca243[m fix: hotoles, add: 2 asistentes
+[33ma390d3da[m fix: MB01
+[33md3b13a28[m add: ponentes total
+[33m6dc0e3a8[m Add: ponentes 50 -at
+[33m24fa529d[m Add: ponentes 50
+[33m3e645a73[m add: 5 ponentes - act
+[33m583af3f4[m add: 5 ponentes
+[33m694c9843[m add: 26 ponentes AND FGIXSSS
+[33m69acd4ed[m add: 26 ponentes
+[33me1e413b6[m add: table rfc search
+[33mc64a1504[m add: 10 ponentes
+[33m31e86542[m add: 10 ponentes
+[33m1fa6cd51[m add: 10 ponentes, fix: esp constancias
+[33ma962a50c[m add: ponentes faltantes
+[33mbc89c911[m fix: extras 2
+[33m3c1da5c5[m add: extras
+[33m7ae81c14[m add ponetnes
+[33m90f6e731[m fix: ev012
+[33mac71c003[m fix: ev01
+[33m0ce1cf23[m fix: ms01
+[33m8706c291[m fix: mm
+[33m692c2674[m fix: curp mr and mm
+[33ma9ec8e9a[m fix: curp je01
+[33m1b4fd7db[m add: ponentes wihtout crup
+[33m3f103e05[m add: STAFF funcitions
+[33m10b90bb6[m add: constancia status
+[33mc934c0ef[m add: asistentes functions activities
+[33me59c93ae[m add: asistentes funtion
+[33m1e2d252a[m add: table datebase
+[33mc07b2dec[m add: addons platform - complete
+[33m4fe505b6[m add: conditional staff
+[33m864f5bdd[m add: gafete
+[33m0231fbde[m add: netlify error fix
+[33m84eed338[m add: netlify
+[33m5aa75e35[m fix: deploy error fixed
+[33me28e15f5[m fix: avatar & name frontmatter
+[33m2122b408[m fix: email script prevent rigth script xd
+[33m4366a268[m fix: email script prevent
+[33mc4284df7[m fix: email script
+[33m3803ab1b[m add: ponentes, constancia accordion
+[33m5f7b6cc0[m add: ponentes md
+[33m2e8ee5cb[m add: ponentes
+[33mc5664c9b[m Initial commit from Astro

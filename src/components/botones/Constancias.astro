@@ -1,0 +1,106 @@
+---
+
+---
+
+<!-- Modal toggle -->
+<button
+    data-modal-target="static-modal"
+    data-modal-toggle="static-modal"
+    class="block text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+    type="button"
+>
+    <i class="fa-solid fa-circle-info"></i> Info sobre sus constancia de talleres
+    y mesas de diálogo
+</button>
+
+<!-- Main modal -->
+<div
+    id="static-modal"
+    data-modal-backdrop="static"
+    tabindex="-1"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+>
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm">
+            <!-- Modal header -->
+            <div
+                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200"
+            >
+                <h3 class="text-xl font-semibold text-gray-900">
+                    Estimable asistente / ponente:
+                </h3>
+                <button
+                    type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                    data-modal-hide="static-modal"
+                >
+                    <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-gray-500">
+                    Desde el primer congreso latinoamericano de recursos
+                    hídricos y cuencas somos totalmente conscientes sobre sus
+                    preocupaciones sobre el pase de lista durante los talleres y
+                    mesas de diálogo, es por ello que ofrecemos una disculpa y
+                    proponemos dos soluciones para que usted tenga la total
+                    certeza sobre la emisión de sus constancias de participación
+                    a dichas actividades:
+                </p>
+                <br />
+                <p class="text-base leading-relaxed text-gray-500">
+                    <ol class="list-decimal pl-10">
+                        <li>
+                            En el momento en que usted guste, puede pasar al
+                            módulo de registro para corroborar con la base de
+                            datos las actividades a las que el comité tiene
+                            conocimiento de que usted asistió y, en caso de
+                            haber discrepancias, poder resolverlo al instante
+                        </li>
+                        <li>
+                            Una semana después de terminar el evento, recibirá a
+                            su correo electrónico un correo con la información
+                            sobre su constancia de participación del evento y
+                            una lista de las actividades que tomó, a fin de
+                            confirmar esta información y hacer una correcta
+                            emisión de sus constancias.
+                        </li>
+                    </ol>
+                </p>
+                <br />
+                <p class="text-base leading-relaxed text-gray-500">
+                    Esperemos que siga disfrutando de este congreso, y como
+                    comité organizador estamos para servirle.
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div
+                class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b"
+            >
+                <button
+                    data-modal-hide="static-modal"
+                    type="button"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                    >Cerrar</button
+                >
+            </div>
+        </div>
+    </div>
+</div>

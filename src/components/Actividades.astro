@@ -566,22 +566,7 @@ const horarios = frontmatter.registro.find(
                                                         Cómo llegar
                                                     </button>
                                                 </li>
-                                                <li
-                                                    class="me-3"
-                                                    role="presentation"
-                                                >
-                                                    <button
-                                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-slate-950 hover:border-gray-700"
-                                                        id={`${qrimage}-tab`}
-                                                        data-tabs-target={`#${qrimage}`}
-                                                        type="button"
-                                                        role="tab"
-                                                        aria-controls={qrimage}
-                                                        aria-selected="false"
-                                                    >
-                                                        QR
-                                                    </button>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
 
@@ -621,29 +606,7 @@ const horarios = frontmatter.registro.find(
                                                     alt=""
                                                 />
                                             </div>
-                                            <div
-                                                class="hidden p-4 rounded-lg bg-white"
-                                                id={qrimage}
-                                                role="tabpanel"
-                                                aria-labelledby={`${qrimage}-tab`}
-                                            >
-                                                <div class="flex justify-center items-center">
-                                                    <img
-                                                        class="p-6"
-                                                        src={
-                                                            "/img/talleres/" +
-                                                            frontmatter.ID +
-                                                            "/" +
-                                                            index +
-                                                            ".svg"
-                                                        }
-                                                        alt={
-                                                            "codigo QR para:" +
-                                                            datos[1]
-                                                        }
-                                                    />
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <hr class="w-48 h-1 mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-10" />
