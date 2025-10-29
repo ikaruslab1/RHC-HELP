@@ -139,9 +139,13 @@ const { message = frontmatter.title } = Astro.props;
                                     disabled
                                     type="text"
                                     value={
-                                        frontmatter.grado === "Mtro." || frontmatter.grado === "Mtra." ? "Maestría" : 
-                                        frontmatter.grado === "Dr." || frontmatter.grado === "Dra." ? "Doctorado" :  
-                                        frontmatter.grado === "Lic." || frontmatter.grado === "Ing." ? "Licenciatura" : 
+                                        frontmatter.grado === "Mtro." || 
+                                            frontmatter.grado === "Mtra." ? "Maestría" : 
+                                        frontmatter.grado === "Dr." || 
+                                            frontmatter.grado === "Dra." ? "Doctorado" :  
+                                        frontmatter.grado === "Lic." || 
+                                            frontmatter.grado === "Ing." || 
+                                            frontmatter.grado == "Arq." ? "Licenciatura" : 
                                         frontmatter.grado == "Arq." ? "Licenciatura" : 
                                         frontmatter.grado == "Prof." ? "Profesora" : 
                                         frontmatter.grado == "Cap. y Lic." ? "Capitán y licenciado" : 
