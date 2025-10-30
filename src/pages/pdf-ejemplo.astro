@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PdfDescargable from "../components/PdfDescargable.astro";
+---
+
+<BaseLayout title="Ejemplo de PDF Descargable">
+  <main class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6 text-center">Ejemplo de PDF Descargable</h1>
+    <p class="text-center mb-8">Haz clic en el botón para imprimir el certificado como PDF</p>
+    
+    <PdfDescargable />
+  </main>
+</BaseLayout>

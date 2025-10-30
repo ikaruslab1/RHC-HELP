@@ -1,0 +1,141 @@
+---
+---
+
+<div class="pdf-container">
+  <div class="pdf-preview">
+    <h2>Vista previa del documento</h2>
+    <div class="preview-frame">
+      <div class="pdf-content" id="pdfContent">
+        <h1>Certificado</h1>
+        <p class="nombre">Juan Pérez González</p>
+        <p class="fecha">15 de Octubre de 2023</p>
+        <p class="asunto">Por su participación en el evento</p>
+      </div>
+    </div>
+  </div>
+  <div class="pdf-actions">
+    <button id="printPdf" class="download-btn">Imprimir PDF</button>
+  </div>
+</div>
+
+<style>
+  .pdf-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+
+  .pdf-preview {
+    margin-bottom: 20px;
+  }
+
+  .pdf-preview h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .preview-frame {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pdf-content {
+    width: 8.5in;
+    height: 11in;
+    padding: 1in;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.5);
+    transform-origin: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pdf-content h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+  }
+
+  .pdf-content .nombre {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3498db;
+  }
+
+  .pdf-content .fecha {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+  }
+
+  .pdf-content .asunto {
+    font-size: 22px;
+    font-style: italic;
+    color: #2c3e50;
+  }
+
+  .pdf-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .download-btn {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .download-btn:hover {
+    background-color: #2980b9;
+  }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #pdfContent, #pdfContent * {
+      visibility: visible;
+    }
+    #pdfContent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8.5in;
+      height: 11in;
+      padding: 1in;
+      margin: 0;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const printBtn = document.getElementById('printPdf');
+    
+    printBtn.addEventListener('click', function() {
+      window.print();
+    });
+  });
+</script>
