@@ -1,62 +1,159 @@
 ---
+
 ---
 
-<div class="pdf-container">
-  <div class="pdf-preview">
-    <h2>Vista previa del documento</h2>
-    <div class="preview-frame">
-      <div class="pdf-content" id="pdfContent">
-        <h1>Certificado</h1>
-        <p class="nombre">Juan Pérez González</p>
-        <p class="fecha">15 de Octubre de 2023</p>
-        <p class="asunto">Por su participación en el evento</p>
+<div class="w-full max-w-3xl mx-auto p-5 rounded-lg shadow-md bg-gray-50">
+  <div class="mb-5">
+    <h2 class="text-center mb-4 text-gray-800 text-xl font-semibold">
+      Vista previa de su constancia
+    </h2>
+    <div
+      class="w-full h-[500px] border border-gray-300 bg-white overflow-hidden flex items-center justify-center"
+    >
+      <div class="pdf-conten" id="pdfContent">
+        <div class="pb-12 px-4 grid grid-cols-2">
+          <div class="flex just gap-6">
+            <img class="w-14" src="/img/logos/UNAM.svg" alt="" />
+            <img class="w-14" src="/img/logos/FESA.svg" alt="" />
+            <img class="w-52" src="/img/logos/RHC.svg" alt="" />
+          </div>
+          <div class="text-right text-xs">
+            <p>
+              Av. Jardines de San Mateo s/n, Sta Cruz Acatlan, 53150 Naucalpan
+              de Juárez, Méx. <br />
+              <span class="text-[#1e6dff]">30 de octubre de 2025</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[1fr_10px_1fr] gap-4 px-4">
+          <div class="text-right">
+            <h2
+              class="text-[140%] font-bold text-[#1e6dff] tracking-tight leading-6"
+            >
+              Universidad Nacional Autónoma de México <br /> Facultad de Estudios
+              Superiores Acatlán
+            </h2>
+            <h3 class="text-md text-slate-600 leading-4.5">
+              Primer Congreso Internacional de <br /> Recursos Hídricos y Cuencas
+            </h3>
+            <br />
+            <br />
+            <div class="text-sm text-slate-600 leading-4.5">
+              <p>
+                Su asistencia refleja un compromiso significativo con los
+                esfuerzos encaminados a abordar los desafíos actuales
+                relacionados con la gestión sostenible de los recursos hídricos
+                y el monitoreo integral de las cuencas en nuestro país. Este
+                congreso, de carácter multidisciplinario, ha promovido la
+                generación de conocimiento, la colaboración académica y la
+                construcción de soluciones innovadoras en áreas clave como la
+                ingeniería, biología, ciencias sociales, economía, historia y
+                arquitectura.
+              </p>
+              <br />
+              <p>
+                A través de su participación, ha contribuido activamente al
+                fortalecimiento de iniciativas y proyectos de investigación
+                orientados a la preservación y manejo adecuado del agua,
+                promoviendo principios de ciencia abierta, acceso universal al
+                conocimiento y comunicación efectiva entre comunidades
+                académicas, científicas y sociales. Este esfuerzo conjunto es un
+                paso significativo hacia el logro de estrategias que permitan
+                preservar este recurso vital para las generaciones presentes y
+                futuras.
+              </p>
+
+              <div
+                class="grid grid-cols-2 justify-around items-end text-center pt-18"
+              >
+                <div class="">
+                  <img
+                    class="w-32 block mx-auto"
+                    src="/img/logos/images.png"
+                    alt=""
+                  />
+                  <p
+                    class="font-serif text-slate-800 text-md tracking-tight font-bold"
+                  >
+                    Dr. David morales gonzalez
+                  </p>
+                  <p class="text-[#1e6dff] text-xs tracking-tight">
+                    Coordinador del posgrado FES Acatlán
+                  </p>
+                </div>
+                <div>
+                  <img
+                    class="w-20 block mx-auto"
+                    src="/img/logos/descarga.jpeg"
+                    alt=""
+                  />
+                  <p
+                    class="font-serif text-slate-800 text-md tracking-tight font-bold"
+                  >
+                    Dr. José Maria Chávez Aguirre
+                  </p>
+                  <p class="text-[#1e6dff] text-xs tracking-tight">
+                    Coordinador general del congreso
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-full">
+            <svg class="h-[100%] w-[2px]" xmlns="http://www.w3.org/2000/svg">
+              <rect class="w-full h-full fill-[#1e6dff]"></rect>
+            </svg>
+          </div>
+          <div>
+            <h1 class="font-thin text-5xl text-slate-700 tracking-tight pt-12">
+              La Facultad de Estudios Superiores Acatlán (UNAM) otorga el
+              presente
+            </h1>
+            <p class="text-slate-700 pt-2">Reconocimiento de asistencia a:</p>
+
+            <div class="py-18">
+              <p class="font-serif text-2xl text-slate-700 font-bold">
+                Dr. Alejandro Rivera Domínguez
+              </p>
+              <svg class="h-[1px] w-full" xmlns="http://www.w3.org/2000/svg">
+                <rect class="w-full h-full fill-gray-400"></rect>
+              </svg>
+              <p class="text-xs text-[#1e6dff]">
+                Doctor en Ingeniería Hidráulica y Gestión de Recursos Hídricos
+              </p>
+            </div>
+            <p class="text-sm text-slate-700 leading-4.5">
+              Por su destacada participación como asistente al Primer Congreso
+              Internacional de Recursos Hídricos y Cuencas, llevado a cabo del
+              <b>27 al 31 de octubre de 2025</b> en el <b
+                >Centro de Estudios Municipales y Metropolitanos (CEMM)</b
+              >.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="pdf-actions">
-    <button id="printPdf" class="download-btn">Imprimir PDF</button>
+  <div class="flex justify-center">
+    <button
+      id="printPdf"
+      class="px-6 py-3 bg-blue-500 text-white border-none rounded hover:bg-blue-600 transition-colors"
+    >
+      Imprimir PDF
+    </button>
   </div>
 </div>
 
 <style>
-  .pdf-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
-  }
-
-  .pdf-preview {
-    margin-bottom: 20px;
-  }
-
-  .pdf-preview h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #333;
-  }
-
-  .preview-frame {
-    width: 100%;
-    height: 500px;
-    border: 1px solid #ddd;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+  /* Estilos específicos para el contenido del PDF que no se pueden hacer con Tailwind */
   .pdf-content {
-    width: 8.5in;
-    height: 11in;
-    padding: 1in;
+    width: 11in;
+    height: 8.5in;
+    padding: 0.5in;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: scale(0.5);
+    transform: scale(0.4);
     transform-origin: center;
     display: flex;
     flex-direction: column;
@@ -64,78 +161,63 @@
     justify-content: center;
   }
 
-  .pdf-content h1 {
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: #2c3e50;
-  }
-
-  .pdf-content .nombre {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #3498db;
-  }
-
-  .pdf-content .fecha {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #7f8c8d;
-  }
-
-  .pdf-content .asunto {
-    font-size: 22px;
-    font-style: italic;
-    color: #2c3e50;
-  }
-
-  .pdf-actions {
-    display: flex;
-    justify-content: center;
-  }
-
-  .download-btn {
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .download-btn:hover {
-    background-color: #2980b9;
-  }
-
   @media print {
     body * {
       visibility: hidden;
     }
-    #pdfContent, #pdfContent * {
+    #pdfContent,
+    #pdfContent * {
       visibility: visible;
     }
     #pdfContent {
       position: absolute;
       left: 0;
       top: 0;
-      width: 8.5in;
-      height: 11in;
-      padding: 1in;
+      width: 11in;
+      height: 8.5in;
       margin: 0;
+      padding: 0.5in;
       transform: none;
       box-shadow: none;
+    }
+    @page {
+      size: letter landscape;
+      margin: 0;
     }
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const printBtn = document.getElementById('printPdf');
-    
-    printBtn.addEventListener('click', function() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const printBtn = document.getElementById("printPdf");
+
+    printBtn.addEventListener("click", function () {
+      const originalTitle = document.title;
+      document.title = ""; // Elimina el título para que no aparezca en el encabezado
+
+      const style = document.createElement("style");
+      style.innerHTML = `
+        @page {
+          size: letter landscape;
+          margin: 0;
+        }
+        @media print {
+          html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
       window.print();
+
+      // Restaurar el título original después de imprimir
+      setTimeout(() => {
+        document.title = originalTitle;
+        document.head.removeChild(style);
+      }, 100);
     });
   });
 </script>
