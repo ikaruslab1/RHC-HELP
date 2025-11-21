@@ -1,0 +1,243 @@
+---
+import Asistente from "../components/Conctancias/casos/Asistente.astro";
+import Ponente from "../components/Conctancias/casos/Ponente.astro";
+import Tallerista from "../components/Conctancias/casos/Tallerista.astro";
+import Conferencista from "../components/Conctancias/casos/Conferencista.astro";
+import Mesa from "../components/Conctancias/casos/Mesa.astro";
+import Moderador from "../components/Conctancias/casos/Moderador.astro";
+import "../styles/global.css";
+import Registradas from "../components/Conctancias/casos/Registradas.astro";
+const { frontmatter } = Astro.props;
+const { datos } = Astro.props;
+const { ID } = Astro.props;
+
+const fechaActualEnEspanol = new Date().toLocaleDateString("es-ES", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<div class="w-full max-w-3xl mx-auto p-5 rounded-lg shadow-md bg-gray-50">
+  <div class="mb-5">
+    {
+      frontmatter[0] === "Asistente" ? (
+        <>
+          <h2 class="text-center mb-4 text-gray-800 text-xl font-semibold">
+            <span class="text-4xl font bold text-slate-600">
+              {frontmatter[0]} al congreso
+            </span>
+            <br />
+          </h2>{" "}
+        </>
+      ) : (
+        <h2 class="text-center mb-4 text-gray-800 text-xl font-semibold">
+          <span class="text-4xl font bold text-slate-600">
+            {frontmatter[0]} de:
+          </span>
+          <br />
+          <em class="text-[#1e6dff]"> {frontmatter[1]}</em>
+          <br />
+        </h2>
+      )
+    }
+
+    <div
+      class="w-full h-[350px] border border-gray-300 bg-white overflow-hidden"
+      id={ID}
+    >
+      <div class="pdf-conten">
+        <div class="pb-12 px-4 grid grid-cols-2 items-stretch">
+          <div class="flex just gap-6">
+            <img class="w-14" src="/img/logos/UNAM.svg" alt="" />
+            <img class="w-14" src="/img/logos/FESA.svg" alt="" />
+            <img class="w-52" src="/img/logos/RHC.svg" alt="" />
+          </div>
+          <div class="text-right text-xs">
+            <p>
+              Av. Jardines de San Mateo s/n, Sta Cruz Acatlan, 53150 Naucalpan
+              de Juárez, Méx. <br />
+              <span class="text-[#1e6dff]">{fechaActualEnEspanol}</span>
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[1fr_10px_1fr] gap-4 px-4">
+          <div class="text-right">
+            <h2
+              class="text-[140%] font-bold text-[#1e6dff] tracking-tight leading-6"
+            >
+              Universidad Nacional Autónoma de México <br /> Facultad de Estudios
+              Superiores Acatlán
+            </h2>
+            <h3 class="text-md text-slate-600 leading-4.5">
+              Primer Congreso Latinoamericano de <br /> Recursos Hídricos y Cuencas
+            </h3><br />
+            <div class="text-sm text-slate-600 leading-4.5">
+              <p>
+                Su asistencia refleja un compromiso significativo con los
+                esfuerzos encaminados a abordar los desafíos actuales
+                relacionados con la gestión sostenible de los recursos hídricos
+                y el monitoreo integral de las cuencas en nuestro país. Este
+                congreso, de carácter multidisciplinario, ha promovido la
+                generación de conocimiento, la colaboración académica y la
+                construcción de soluciones innovadoras en áreas clave como la
+                ingeniería, biología, ciencias sociales, economía, historia y
+                arquitectura.
+              </p>
+              <br />
+              <p>
+                A través de su participación, ha contribuido activamente al
+                fortalecimiento de iniciativas y proyectos de investigación
+                orientados a la preservación y manejo adecuado del agua,
+                promoviendo principios de ciencia abierta, acceso universal al
+                conocimiento y comunicación efectiva entre comunidades
+                académicas, científicas y sociales. Este esfuerzo conjunto es un
+                paso significativo hacia el logro de estrategias que permitan
+                preservar este recurso vital para las generaciones presentes y
+                futuras.
+              </p>
+              <br /><br /><br /><br />
+              <div
+                class="grid grid-cols-2 justify-around items-end text-center"
+              >
+                <div class="">
+                  <p
+                    class="font-serif text-slate-800 text-md tracking-tight font-bold"
+                  >
+                    Dr. David morales gonzalez
+                  </p>
+
+                  <p class="text-[#1e6dff] text-xs tracking-tight">
+                    Coordinador del posgrado FES Acatlán
+                  </p>
+                </div>
+                <div>
+                  <img src="/public/firmas/FirmaUno.jpg" alt="" />
+                  <p
+                    class="font-serif text-slate-800 text-md tracking-tight font-bold"
+                  >
+                    Dr. José Maria Chávez Aguirre
+                  </p>
+                  <p class="text-[#1e6dff] text-xs tracking-tight">
+                    Coordinador general del congreso
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-full">
+            <svg class="h-[100%] w-[2px]" xmlns="http://www.w3.org/2000/svg">
+              <rect class="w-full h-full fill-[#1e6dff]"></rect>
+            </svg>
+          </div>
+          <div>
+            <br /><br />
+            <h1 class="font-thin text-5xl text-slate-700 tracking-tight">
+              La Facultad de Estudios Superiores Acatlán (UNAM) otorga la
+              presente
+            </h1>
+            {
+              frontmatter[0] === "Asistente" ? (
+                <Asistente datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Ponente" ? (
+                <Ponente datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Tallerista" ? (
+                <Tallerista datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Conferencista magistral" ? (
+                <Conferencista datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Ponente de la mesa de diálogo" ? (
+                <Mesa datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Moderador" ? (
+                <Moderador datos={datos} frontmatter={frontmatter} />
+              ) : (
+                <br />
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <button
+      id={ID + "-btn"}
+      class="px-6 py-3 bg-blue-500 text-white border-none rounded hover:bg-blue-600 transition-colors"
+    >
+      Imprimir PDF
+    </button>
+  </div>
+</div>
+
+<style>
+  .pdf-content {
+    width: 11in;
+    height: 8.5in;
+    padding: 0.5in;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.4);
+    transform-origin: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<script define:vars={{ contentID: ID, frontmatter: frontmatter, datos: datos }}>
+  const buttonID = contentID + "-btn";
+  const printBtn = document.getElementById(buttonID);
+
+  if (printBtn) {
+    printBtn.addEventListener("click", function () {
+      const originalTitle = document.title;
+      document.title = datos.nombre;
+      const style = document.createElement("style");
+      style.innerHTML = `
+        @page {
+          size: letter landscape;
+          margin: 0;
+        }
+        @media print {
+          html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+          body * {
+            visibility: hidden;
+          }
+          
+          /* LA MAGIA: Apunta SÓLO al ID de contenido de esta instancia */
+          #${contentID},
+          #${contentID} * {
+            visibility: visible;
+          }
+          #${contentID} {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 11in;
+            height: 8.5in;
+            margin: 0;
+            padding: 0.5in;
+            transform: none;
+            box-shadow: none;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Imprimir
+      window.print();
+
+      // Limpiar y restaurar el título
+      setTimeout(() => {
+        document.title = originalTitle;
+        document.head.removeChild(style);
+      }, 100);
+    });
+  } else {
+    console.warn("No se pudo encontrar el botón de impresión:", buttonID);
+  }
+</script>

@@ -1,0 +1,25 @@
+---
+const { datos } = Astro.props;
+const { frontmatter } = Astro.props;
+---
+
+<p class="text-slate-700 pt-2">Constancia de participación a:</p>
+
+<div class="py-18">
+  <p class="font-serif text-2xl text-slate-700 font-bold">
+    {datos.grado + " " + datos.nombre}
+  </p>
+  <svg class="h-[1px] w-full" xmlns="http://www.w3.org/2000/svg">
+    <rect class="w-full h-full fill-gray-300"></rect>
+  </svg>
+</div>
+<p class="text-sm text-slate-700 leading-4.5">
+  Por el alto honor de su participación en la Mesa de diálogo Magistral <em
+    class="text-[#1e6dff]">{frontmatter[1]}</em
+  >, en el marco del Primer Congreso Latinoamericano de Recursos Hídricos y
+  Cuencas. Celebrado del
+  <b class="text-slate-600">27 al 31 de octubre de 2025</b> en el <b
+    class="text-slate-600"
+    >Centro de Estudios Municipales y Metropolitanos (CEMM)</b
+  >.
+</p>

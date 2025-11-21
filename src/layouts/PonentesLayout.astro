@@ -6,43 +6,104 @@ import Actividades from "../components/Actividades.astro";
 import Gafete from "../components/gafete.astro";
 import Extras from "../components/Extras.astro";
 import QRCodeGenerator from "../components/QRCodeGenerator.astro";
-import Constancias from "../components/botones/Constancias.astro";
+import PdfDescargable from "../pages/PdfDescargable.astro";
+import PdfDescargableRegistradas from "../pages/PdfDescargableRegistradas.astro";
 
 const { frontmatter } = Astro.props;
 const nombreconjunto =
-    frontmatter.grado + " " + frontmatter.nombre.split(" ").at(-2);
+  frontmatter.grado + " " + frontmatter.nombre.split(" ").at(-2);
+
+const horarios = frontmatter.registro.find(
+  (item: any) => item.horarios
+)?.horarios;
 ---
 
 <BaseLayoutPonentes pageTitle={nombreconjunto} tipo={frontmatter.tags[0]}>
-    <HeaderGeneral frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
+  <HeaderGeneral frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
 
-    <div class="bg-white rounded-t-4xl px-4 py-12">
-        <!------------------------------------------------------------------ Actividades ------------------------------------------------------------------>
-        <!--  -->
-        <div class="flex justify-center pb-12">
-            <Constancias />
-        </div>
-        <!--  -->
+  <div class="bg-white rounded-t-4xl px-4 py-12">
+    <Actividades frontmatter={frontmatter} />
+    <DatosConstancias frontmatter={frontmatter} />
+    <Extras frontmatter={frontmatter} />
+    <QRCodeGenerator frontmatter={frontmatter} />
+    <Gafete frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
 
-        <Actividades frontmatter={frontmatter} />
+    <!--  -->
+    <br /><br />
+    <hr />
+    <br /><br />
+    <PdfDescargable
+      frontmatter={frontmatter.tags}
+      datos={frontmatter}
+      ID="PrntBtnOne"
+    /><br />
+    {
+      frontmatter.act2[0] ? (
+        <>
+          <PdfDescargable
+            frontmatter={frontmatter.act2}
+            datos={frontmatter}
+            ID="PrntBtnTwo"
+          />
+          <br />
+        </>
+      ) : null
+    }
+    {
+      frontmatter.act3[0] ? (
+        <>
+          <PdfDescargable
+            frontmatter={frontmatter.act3}
+            datos={frontmatter}
+            ID="PrntBtnThre"
+          />
+          <br />
+        </>
+      ) : null
+    }
+    {
+      frontmatter.act4[0] ? (
+        <>
+          <PdfDescargable
+            frontmatter={frontmatter.act4}
+            datos={frontmatter}
+            ID="PrntBtnFour"
+          />
+          <br />
+        </>
+      ) : null
+    }
+    {
+      frontmatter.registro[0] === "Si"
+        ? horarios.map((diaObj: any, index: any) => {
+            const dia = Object.keys(diaObj)[0];
+            const datos = diaObj[dia];
 
-        <!------------------------------------------------------------------ Constancia ------------------------------------------------------------------>
+            // IDs únicos
+            const tabId = `default-tab-${index}`;
+            const contentId = `default-tab-content-${index}`;
+            const profileId = `profile-${index}`;
+            const dashboardId = `dashboard-${index}`;
+            const qrimage = `qrimage-${index}`;
 
-        <DatosConstancias frontmatter={frontmatter} />
+            return (
+              <>
+                <PdfDescargableRegistradas
+                  frontmatter={frontmatter.act4}
+                  datos={frontmatter}
+                  consdatos={datos}
+                  ID={tabId}
+                />
+                <br />
+              </>
+            );
+          })
+        : null
+    }
+    <!--  -->
+  </div>
 
-        <!------------------------------------------------------------------ Herramientas extras ------------------------------------------------------------------>
-
-        <Extras frontmatter={frontmatter} />
-
-        <!------------------------------------------------------------------ Modal 
-        ------------------------------------------------------------------>
-
-        <QRCodeGenerator frontmatter={frontmatter} />
-
-        <Gafete frontmatter={frontmatter} nombreconjunto={nombreconjunto} />
-    </div>
-
-    <script>
-        import "../scripts/gafete.js";
-    </script>
+  <script>
+    import "../scripts/gafete.js";
+  </script>
 </BaseLayoutPonentes>

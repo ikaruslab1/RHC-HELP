@@ -4,22 +4,26 @@ title: EJ01
 ID: EJ01
 curp: VAGA640912HGRZRQ06
 estatus: Dos
-nombre: Nombre_Apellido
-grado: Mtra.
+nombre: Martín Bonfil Olivera
+grado: Mtro.
 datosextranjero:
-    - 
+  -
 tags:
-    - Asistente
-act2: 
-    - 
-act3: 
-    - 
-act4: 
-    - 
-act5: 
-    - 
+  - Conferencista magistral
+  - Defender el agua, construir el futuro, Miradas desde la ciencia, la gestión y la comunidad.
+  - Miércoles
+  - 15:30-15:50 hrs
+  - Sala BC SUR-AGUASCALIENTES
+act2:
+  -
+act3:
+  -
+act4:
+  -
+act5:
+  -
 registro:
-    - No
-    - horarios:
-        -      
+  - No
+  - horarios:
+      -
 ---

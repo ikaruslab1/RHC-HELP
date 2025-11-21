@@ -1,14 +1,18 @@
 ---
-
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+const { datos } = Astro.props;
 ---
 
 <div class="w-full max-w-3xl mx-auto p-5 rounded-lg shadow-md bg-gray-50">
   <div class="mb-5">
     <h2 class="text-center mb-4 text-gray-800 text-xl font-semibold">
-      Vista previa de su constancia
+      hola
+      <br />
     </h2>
     <div
       class="w-full h-[500px] border border-gray-300 bg-white overflow-scroll"
+      id="pdfContent"
     >
       <div class="pdf-conten" id="pdfContent">
         <div class="pb-12 px-4 grid grid-cols-2 items-stretch">
@@ -25,7 +29,6 @@
             </p>
           </div>
         </div>
-
         <div class="grid grid-cols-[1fr_10px_1fr] gap-4 px-4">
           <div class="text-right">
             <h2
@@ -35,10 +38,8 @@
               Superiores Acatlán
             </h2>
             <h3 class="text-md text-slate-600 leading-4.5">
-              Primer Congreso Internacional de <br /> Recursos Hídricos y Cuencas
-            </h3>
-            <br />
-            <br />
+              Primer Congreso Latinoamericano de <br /> Recursos Hídricos y Cuencas
+            </h3><br />
             <div class="text-sm text-slate-600 leading-4.5">
               <p>
                 Su asistencia refleja un compromiso significativo con los
@@ -63,16 +64,11 @@
                 preservar este recurso vital para las generaciones presentes y
                 futuras.
               </p>
-
+              <br /><br /><br /><br />
               <div
                 class="grid grid-cols-2 justify-around items-end text-center pt-18"
               >
                 <div class="">
-                  <img
-                    class="w-32 block mx-auto"
-                    src="/img/logos/images.png"
-                    alt=""
-                  />
                   <p
                     class="font-serif text-slate-800 text-md tracking-tight font-bold"
                   >
@@ -83,11 +79,6 @@
                   </p>
                 </div>
                 <div>
-                  <img
-                    class="w-20 block mx-auto"
-                    src="/img/logos/descarga.jpeg"
-                    alt=""
-                  />
                   <p
                     class="font-serif text-slate-800 text-md tracking-tight font-bold"
                   >
@@ -106,30 +97,26 @@
             </svg>
           </div>
           <div>
+            <br /><br />
             <h1 class="font-thin text-5xl text-slate-700 tracking-tight">
-              La Facultad de Estudios Superiores Acatlán (UNAM) otorga el
+              La Facultad de Estudios Superiores Acatlán (UNAM) otorga la
               presente
             </h1>
-            <p class="text-slate-700 pt-2">Reconocimiento de asistencia a:</p>
-
-            <div class="py-18">
-              <p class="font-serif text-2xl text-slate-700 font-bold">
-                Dr. Alejandro Rivera Domínguez
-              </p>
-              <svg class="h-[1px] w-full" xmlns="http://www.w3.org/2000/svg">
-                <rect class="w-full h-full fill-gray-400"></rect>
-              </svg>
-              <p class="text-xs text-[#1e6dff]">
-                Doctor en Ingeniería Hidráulica y Gestión de Recursos Hídricos
-              </p>
-            </div>
-            <p class="text-sm text-slate-700 leading-4.5">
-              Por su destacada participación como asistente al Primer Congreso
-              Internacional de Recursos Hídricos y Cuencas, llevado a cabo del
-              <b>27 al 31 de octubre de 2025</b> en el <b
-                >Centro de Estudios Municipales y Metropolitanos (CEMM)</b
-              >.
-            </p>
+            <!-- Reconocimiento de asistencia a: -->
+            <!-- {
+              frontmatter[0] === "Asistente" ? (
+                <Asistente datos={datos} />
+              ) : frontmatter[0] === "Ponente" ? (
+                <Ponente datos={datos} />
+              ) : frontmatter[0] === "3" ? (
+                <Tallerista />
+              ) : frontmatter[0] === "4" ? (
+                <Conferencista />
+              ) : (
+                <br />
+              )
+            } -->
+            <!-- Reconocimiento de asistencia a: -->
           </div>
         </div>
       </div>
@@ -137,8 +124,7 @@
   </div>
   <div class="flex justify-center">
     <button
-      id="printPdf"
-      class="px-6 py-3 bg-blue-500 text-white border-none rounded hover:bg-blue-600 transition-colors"
+      class="printPdfBtn px-6 py-3 bg-blue-500 text-white border-none rounded hover:bg-blue-600 transition-colors"
     >
       Imprimir PDF
     </button>
@@ -188,36 +174,5 @@
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const printBtn = document.getElementById("printPdf");
-
-    printBtn.addEventListener("click", function () {
-      const originalTitle = document.title;
-      document.title = ""; // Elimina el título para que no aparezca en el encabezado
-
-      const style = document.createElement("style");
-      style.innerHTML = `
-        @page {
-          size: letter landscape;
-          margin: 0;
-        }
-        @media print {
-          html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-
-      window.print();
-
-      // Restaurar el título original después de imprimir
-      setTimeout(() => {
-        document.title = originalTitle;
-        document.head.removeChild(style);
-      }, 100);
-    });
-  });
+  import "../scripts/constancia.js";
 </script>
