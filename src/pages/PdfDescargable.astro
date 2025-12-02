@@ -7,6 +7,7 @@ import Mesa from "../components/Conctancias/casos/Mesa.astro";
 import Moderador from "../components/Conctancias/casos/Moderador.astro";
 import "../styles/global.css";
 import Registradas from "../components/Conctancias/casos/Registradas.astro";
+import Voluntario from "../components/Conctancias/casos/Voluntario.astro";
 const { frontmatter } = Astro.props;
 const { datos } = Astro.props;
 const { ID } = Astro.props;
@@ -149,6 +150,8 @@ const fechaActualEnEspanol = new Date().toLocaleDateString("es-ES", {
                 <Mesa datos={datos} frontmatter={frontmatter} />
               ) : frontmatter[0] === "Moderador" ? (
                 <Moderador datos={datos} frontmatter={frontmatter} />
+              ) : frontmatter[0] === "Voluntario" ? (
+                <Voluntario datos={datos} frontmatter={frontmatter} />
               ) : (
                 <br />
               )

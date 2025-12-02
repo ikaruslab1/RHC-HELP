@@ -4,13 +4,13 @@ title: EJ01
 ID: EJ01
 curp: VAGA640912HGRZRQ06
 estatus: Dos
-nombre: Martín Bonfil Olivera
-grado: Mtro.
+nombre: Karla Mejía García
+grado: Mtra.
 datosextranjero:
   -
 tags:
-  - Conferencista magistral
-  - Defender el agua, construir el futuro, Miradas desde la ciencia, la gestión y la comunidad.
+  - Voluntario
+  - texto
   - Miércoles
   - 15:30-15:50 hrs
   - Sala BC SUR-AGUASCALIENTES
